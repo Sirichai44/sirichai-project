@@ -1,0 +1,35 @@
+services:
+  # mongo:
+  #   image: mongo:latest
+  #   container_name: mongo
+  #   restart: always
+  #   ports:
+  #     - "27017:27017"
+  #   environment:
+  #     MONGO_INITDB_ROOT_USERNAME: root
+  #     MONGO_INITDB_ROOT_PASSWORD: P@ssw0rd
+  #   volumes:
+  #     - mongo-data:/data/db
+  app:
+    build: .
+    container_name: go_app
+    volumes:
+      - .:/app
+      - /app/tmp
+    # working_dir: /app
+    command: air
+    environment:
+      MONGO_URL: "mongodb://root:P%40ssw0rd@mongo:27017"
+      MONGO_DB_NAME: "daveslist"
+      MONGO_DB_USER: "root"
+      MONGO_DB_PASSWORD: "P@ssw0rd"
+      MONGO_ADMIN_DB_EMAIL: "admin@mail.com"
+      MONGO_ADMIN_DB_PASSWORD: "P@ssw0rd"
+      SECRET_KEY: "sirichai-44-secret-key"
+    ports:
+      - "8080:8080"
+  #   depends_on:
+  #     - mongo
+
+  # volumes:
+  #   mongo-data:
