@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Outlet } from 'react-router';
-import { Button, useColorScheme } from '@mui/joy';
+import { useColorScheme } from '@mui/joy';
 function App() {
-  const { mode, setMode } = useColorScheme();
+  const { mode } = useColorScheme();
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     const initialState = async () => {};
@@ -20,19 +20,8 @@ function App() {
     }
   }, [mode]);
 
-  // return loading ? null : <Outlet />;
-  return (
-    <div>
-      <Button
-        variant="outlined"
-        onClick={() => {
-          setMode(mode === 'light' ? 'dark' : 'light');
-        }}>
-        Hello World
-      </Button>
-      <Outlet />
-    </div>
-  );
+  return loading ? null : <Outlet />;
+  // return <h1 className="text-3xl font-bold underline">Hello world!</h1>;
 }
 
 export default App;

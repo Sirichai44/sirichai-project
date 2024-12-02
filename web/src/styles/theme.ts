@@ -5,16 +5,31 @@ const theme = extendTheme({
     JoyButton: {
       defaultProps: {
         size: 'sm'
+      },
+      styleOverrides: {
+        root: {
+          borderRadius: '0.375rem'
+        }
       }
     },
     JoyInput: {
       defaultProps: {
         size: 'sm'
+      },
+      styleOverrides: {
+        root: {
+          borderRadius: '0.375rem'
+        }
       }
     },
     JoySelect: {
       defaultProps: {
         size: 'sm'
+      },
+      styleOverrides: {
+        root: {
+          borderRadius: '0.375rem'
+        }
       }
     },
     JoyTooltip: {

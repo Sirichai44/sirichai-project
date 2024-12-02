@@ -7,7 +7,8 @@ export default {
       fontFamily: {
         nurito: ['Nurito', 'sans-serif'],
         popins: ['Poppins', 'sans-serif'],
-        comfortaa: ['Comfortaa', 'cursive']
+        comfortaa: ['Comfortaa', 'cursive'],
+        geist: ['Geist', 'sans-serif']
       },
       colors: {
         'primary-light': '#374151',
